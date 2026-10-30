@@ -16,6 +16,7 @@ Aplicação web para organizar projetos, controlar orçamentos e acompanhar cust
 
 - Node.js 16 ou superior.
 - npm (incluído com Node.js).
+- TypeScript é instalado pelo npm junto com as dependências de desenvolvimento.
 
 ## Instalação e execução
 
@@ -52,6 +53,7 @@ Para apagar os dados da aplicação neste navegador, abra as ferramentas de dese
 | --- | --- |
 | `npm start` | Inicia o servidor local de desenvolvimento. |
 | `npm run build` | Gera a versão de produção em `build/`. |
+| `npm run typecheck` | Verifica os tipos TypeScript sem gerar arquivos. |
 | `npm test` | Inicia o executor de testes do Create React App. |
 | `npm run eject` | Expõe as configurações internas do Create React App (operação irreversível). |
 
@@ -68,14 +70,16 @@ src/
     services/            Cadastro e listagem de serviços
     ui/                  Componentes reutilizáveis
   hooks/                 Hooks de projetos e tema
-  services/api.js        Operações locais e persistência no localStorage
+  services/api.ts        Operações locais e persistência no localStorage
+  types.ts               Modelos de projeto, categoria, serviço e métricas
   styles/                Tokens, layout e estilos globais
   utils/                 Formatação e cálculos de projetos
+tsconfig.json            Configuração do TypeScript
 ```
 
 ## Tecnologias
 
-- React 17 e Create React App.
+- React 17, TypeScript em modo estrito e Create React App.
 - React Router para navegação.
 - React Icons para ícones.
 - `localStorage` para persistência no navegador.
