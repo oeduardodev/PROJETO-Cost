@@ -58,6 +58,24 @@
       "cost": 0,
       "services": [],
       "id": 7
+    },
+    {
+      "name": "Portal do Cliente",
+      "budget": "12000",
+      "category": {
+        "id": "2",
+        "name": "Desenvolvimento"
+      },
+      "cost": 3000,
+      "services": [
+        {
+          "name": "Consultoria UX",
+          "cost": "3000",
+          "description": "Consultoria de experiência do usuário",
+          "id": "26793ce1-70f3-4197-a8c2-6fb004731f36"
+        }
+      ],
+      "id": 8
     }
   ],
   "categories": [

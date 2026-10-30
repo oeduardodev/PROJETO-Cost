@@ -1,0 +1,211 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  min-width: 0;
+  padding: var(--space-5);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  box-shadow: var(--shadow-xs);
+  transition: border-color var(--transition), box-shadow var(--transition),
+    transform var(--transition);
+}
+
+.card:hover {
+  border-color: var(--border-strong);
+  box-shadow: var(--shadow-sm);
+  transform: translateY(-1px);
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-3);
+  min-width: 0;
+}
+
+.titleWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+.title {
+  overflow: hidden;
+  color: var(--text);
+  font-size: 16px;
+  font-weight: 650;
+  letter-spacing: -0.015em;
+  line-height: 1.3;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.numbers {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-3);
+  padding: var(--space-3) 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.number {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+
+.numberLabel {
+  color: var(--text-3);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+.numberValue {
+  overflow-wrap: anywhere;
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.01em;
+}
+
+.numberValueDanger {
+  color: var(--danger);
+}
+
+.numberValueSuccess {
+  color: var(--success);
+}
+
+.progressBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.progressHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  color: var(--text-2);
+  font-size: 12px;
+}
+
+.progressPercent {
+  color: var(--text);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.progressPercentDanger {
+  color: var(--danger);
+}
+
+.progressPercentWarning {
+  color: var(--warning);
+}
+
+.helper {
+  color: var(--text-3);
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.helperDanger {
+  color: var(--danger);
+}
+
+.helperWarning {
+  color: var(--warning);
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  margin-top: auto;
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* List view */
+.cardList {
+  display: grid;
+  grid-template-columns: minmax(220px, 1.5fr) minmax(260px, 1.6fr) minmax(180px, 1fr) auto;
+  align-items: center;
+  gap: var(--space-6);
+  padding: var(--space-4) var(--space-5);
+}
+
+.cardList:hover {
+  transform: none;
+}
+
+.cardList .header {
+  align-items: center;
+}
+
+.cardList .titleWrap {
+  gap: 6px;
+}
+
+.cardList .numbers {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  padding: 0;
+  border: 0;
+}
+
+.cardList .progressBlock {
+  gap: 6px;
+}
+
+.cardList .footer {
+  justify-content: flex-end;
+}
+
+@media (max-width: 1200px) {
+  .cardList {
+    grid-template-columns: minmax(200px, 1.3fr) minmax(220px, 1.4fr) minmax(160px, 1fr);
+  }
+
+  .cardList .footer {
+    grid-column: 1 / -1;
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 760px) {
+  .cardList {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--space-4);
+  }
+
+  .cardList .footer {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 420px) {
+  .numbers {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .numbers .number:last-child {
+    grid-column: 1 / -1;
+  }
+}

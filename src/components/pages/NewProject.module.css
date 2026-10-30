@@ -1,14 +1,10 @@
-.newproject_container{
-    width: 450px;
-    margin: 0 auto;
-    padding: 3em;
+.formCard {
+  width: 100%;
+  margin: 0;
 }
 
-.newproject_container h1{
-    margin-bottom: 0.5em;
+@media (max-width: 560px) {
+  .formCard {
+    padding: var(--space-5);
+  }
 }
-
-.newproject_container p{
-    color: #7b7b7b;
-}
-

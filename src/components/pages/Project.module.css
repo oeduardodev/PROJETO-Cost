@@ -1,48 +1,138 @@
-.project_details{
-    padding: 2em 0;
+.headerSkeleton {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-.project_details h1, .project_details h2, .project_details p{
-    margin-bottom: 0.5em;
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--space-4);
 }
 
-.project_details h1{
-    background-color: #222;
-    color: #ffbb33;
-    padding: 0.4em;
+.progressCard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  padding: var(--space-6);
 }
 
-.project_details span{
-    font-weight: bold;
+.progressHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-4);
 }
 
-.details_container, .service_form_container{
-    border-bottom: 1px solid #7a7a7a;
-    margin-bottom: 1.2em;
-    padding-bottom: 1.2em;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+.sectionTitle {
+  color: var(--text);
+  font-size: 17px;
+  font-weight: 650;
+  letter-spacing: -0.02em;
 }
 
-.btn{
-    background-color: #222;
-    color: #FFF;
-    padding: 0.5em 1em;
-    text-decoration: none;
-    transition: 0.6s;
-    border: 0.12em solid rgb(53, 52, 52);
-    cursor: pointer;
-    max-height: 40px;
-    border: none;
+.sectionText {
+  margin-top: 4px;
+  color: var(--text-2);
+  font-size: 13px;
+  line-height: 1.55;
 }
 
-.btn:hover{
-    color: #f5be51;
-    border-color: #f8a808;
-    border-radius: 0.5em;
+.progressBadge {
+  display: inline-flex;
+  align-items: center;
+  height: 28px;
+  padding: 0 11px;
+  flex: none;
+  border-radius: var(--radius-full);
+  background: var(--accent-soft);
+  color: var(--accent-ink);
+  font-size: 13px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
 }
 
-.project_info{
+.progressBadgeDanger {
+  background: var(--danger-soft);
+  color: var(--danger);
+}
+
+.progressStats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-4);
+  padding-top: var(--space-2);
+}
+
+.progressStat {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+
+.progressStat span {
+  color: var(--text-3);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.progressStat strong {
+  overflow-wrap: anywhere;
+  color: var(--text);
+  font-size: 15px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.servicesCard {
+  overflow: hidden;
+}
+
+.servicesHeader {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding: var(--space-5) var(--space-6);
+  border-bottom: 1px solid var(--border);
+}
+
+@media (max-width: 1180px) {
+  .statsGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .progressHeader {
+    flex-direction: column;
+  }
+
+  .progressStats {
+    grid-template-columns: 1fr;
+    gap: var(--space-3);
+  }
+
+  .servicesHeader {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .servicesHeader .btn {
     width: 100%;
+  }
+}
+
+@media (max-width: 560px) {
+  .statsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .progressCard {
+    padding: var(--space-5);
+  }
 }
